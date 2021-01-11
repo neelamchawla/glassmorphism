@@ -547,3 +547,194 @@ section .moon img {
     font-family: 'Dancing Script', cursive;
     font-size: 3em;
 }
+
+/* ComingSoon - count down */
+.ComingSoon {
+    background: #ff4e2b;
+    position: relative;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.ComingSoon .img1Bx {
+    position: relative;
+    left: 0;
+    width: 800px;
+    height: 100%;
+    background: url('./img/img.gif');
+    background-size: auto;
+}
+
+.ComingSoon .countDownBx {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: calc(100% - 450px);
+}
+
+.ComingSoon .countDownBx h2 {
+    text-align: center;
+    font-size: 1.5em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 500;
+    line-height: 4em;
+}
+
+.ComingSoon .countDownBx h2 span {
+    font-size: 6rem;
+    font-weight: 700;
+}
+
+.ComingSoon .countDownBx h2 span i {
+    font-style: initial;
+    color: gold;
+}
+
+.ComingSoon .countDownBx .countDown {
+    margin-top: 30px;
+    background: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ComingSoon .countDownBx .countDown div {
+    position: relative;
+    width: 100px;
+    text-align: center;
+    color: #fff;
+    font-size: 2.5em;
+    font-weight: 500;
+    margin: 0 15px;
+    margin-top: -25px;
+}
+
+.ComingSoon .countDownBx .countDown div::before {
+    content: 'text';
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    color: #fff;
+    font-size: 0.35em;
+    font-weight: 500;
+    line-height: 35px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.ComingSoon .countDownBx .countDown div#day::before {
+    content: 'Days';
+}
+.ComingSoon .countDownBx .countDown div#hour::before {
+    content: 'Hours';
+}
+.ComingSoon .countDownBx .countDown div#minute::before {
+    content: 'Minutes';
+}
+.ComingSoon .countDownBx .countDown div#second::before {
+    content: 'Seconds';
+    color: gold;
+}
+.ComingSoon .countDownBx .countDown div#second {
+    color: gold;
+}
+
+@media (max-width: 991px) {
+    .ComingSoon .img1Bx {
+        display: none;
+    }
+    .ComingSoon .countDownBx {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .ComingSoon .contentBx h2 {
+        font-size: 1.1em;
+    }
+    .ComingSoon .contentBx .countDown {
+        height: 100px;
+    }
+    .ComingSoon .contentBx .countDown div {
+        width: 80px;
+        font-size: 2em;
+        margin: 0;
+        margin-top: -25px;
+    }
+}
+
+#products {
+    justify-content: flex-end !important;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#products img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 300px;
+}
+
+#products .watchNav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    /* background: #fff; */
+}
+
+#products .watchNav span {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin: 10px 5px;
+    background: #f00;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#products .watchNav span.active {
+    border: 2px solid #fff;
+    box-shadow: 0px 0px 10px aliceblue;
+    transform: scale(1.2);
+}
+
+#products .watchNav span.one,
+#products .watchNav i.one {
+    background: #28e651;
+}
+#products .watchNav span.two,
+#products .watchNav i.two {
+    background: #ff226d;
+}
+#products .watchNav span.three,
+#products .watchNav i.three {
+    background: #2196f3;
+}
+#products .watchNav span.four,
+#products .watchNav i.four {
+    background: #d52af3;
+}
+
+#products .watchNav span.active + i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    mix-blend-mode: hue;
+}
