@@ -24,7 +24,7 @@ window.addEventListener('scroll', function() {
 });
 
 // countdown
-const countDate = new Date('january 1, 2022 00:00:00').getTime();
+const countDate = new Date('january 1, 2024 00:00:00').getTime();
 
 function newYear() {
     const now = new Date().getTime();
